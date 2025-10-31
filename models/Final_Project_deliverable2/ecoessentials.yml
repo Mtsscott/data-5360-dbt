@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: ecoess_entials
+    database: GROUP9PROJECT
+    schema: ecoessentials
+    tables:
+      - name: product
+      - name: order
+      - name: sales
+      - name: date
+      - name: user
+      - name: campaign
+      - name: email_event
+      - name: eamil
+      - name: event
