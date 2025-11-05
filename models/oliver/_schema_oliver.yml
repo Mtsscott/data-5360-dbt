@@ -27,8 +27,11 @@ models:
       - name: store_name
         tests:
           - accepted_values:
-            arguments:
-                values: ["Franks Corner","North Skagway","East Gilbert"]
+              values:
+                - "Franks Corner"
+                - "North Skagway"
+                - "East Gilbert"
+
   - name: fact_sales
     description: "Oliver's Sweets sales fact"
     columns:
