@@ -2,36 +2,39 @@ version: 2
 
 models:
   - name: dim_customer
-    description: "Oliver's Sweets customer Dimension"
-    columns: 
-    - name: customer_id
-      tests:
-        - unique
-  - name: dim_employee
-    description: "Oliver's Sweets employee Dimension"
+    description: "Oliver's Sweets customer dimension"
     columns:
-      - name: position 
+      - name: customer_id
+        tests:
+          - unique
+
+  - name: dim_employee
+    description: "Oliver's Sweets employee dimension"
+    columns:
+      - name: employee_id
         tests:
           - not_null
+
   - name: dim_date
-    description: "Oliver's Sweets date Dimension"
+    description: "Oliver's Sweets date dimension"
+
   - name: dim_product
-    description: "Oliver's Sweets product Dimension"
+    description: "Oliver's Sweets product dimension"
+
   - name: dim_store
-    description: "Oliver's Sweets store Dimesion"
-    columns: 
-    - name: store_name
-      tests: 
-        - accepted_values:
-            values:
-              - "Franks Corner"
-              - "North Skagway"
-              - "East Gilbert"
+    description: "Oliver's Sweets store dimension"
+    columns:
+      - name: store_name
+        tests:
+          - accepted_values:
+            arguments:
+                values: ["Franks Corner","North Skagway","East Gilbert"]
+
   - name: fact_sales
-    description: "Oliver's Sweets sales Fact"
-    columns: 
+    description: "Oliver's Sweets sales fact"
+    columns:
       - name: customer_id
-        tests: 
-          - relationships: 
+        tests:
+          - relationships:
               to: ref('dim_customer')
               field: customer_id
