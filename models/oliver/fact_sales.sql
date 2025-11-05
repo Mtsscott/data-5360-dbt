@@ -16,7 +16,7 @@ from {{ source('oliver_landing', 'orderline') }} l
 inner join {{ source('oliver_landing', 'orders') }} o
     on l.order_id = o.order_id
 inner join {{ ref('oliver_dim_customer') }} c
-    on o.customer_id = c.customer_id
+    on o.customer_id = c.customer_key
 inner join {{ ref('oliver_dim_employee') }} e
     on o.employee_id = e.employee_id
 inner join {{ ref('oliver_dim_product') }} p
