@@ -30,8 +30,8 @@ models:
   - name: fact_sales
     description: "Oliver's Sweets sales fact"
     columns:
-      - name: customer_id
+      - name: customer_key
         tests:
           - relationships:
               to: ref('oliver_dim_customer')
-              field: customer_id
+              field: customer_key
